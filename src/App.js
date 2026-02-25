@@ -1,24 +1,123 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Routes, Route, NavLink } from "react-router-dom";
+import Country from "./Country";
+import State from "./State";
+import District from "./District";
+import Language from "./Language";
+import Image from "./Image";
+import Radio from "./Radio";
+import Searching from "./Searching";
+import Pagination from "./Pagination";
+import Export from "./Export";
+import Checkbox from "./Checkbox";
+import Multiselect from "./Multiselect";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className="d-flex flex-column min-vh-100">
+
+        {/* Top Navbar */}
+        <nav className="navbar navbar-dark bg-dark shadow-sm">
+          <div className="container-fluid">
+            <NavLink className="navbar-brand fw-bold" to="/">
+              Siwansh Solutions
+            </NavLink>
+          </div>
+        </nav>
+
+        {/* Main Layout */}
+        <div className="container-fluid flex-grow-1">
+          <div className="row">
+
+            {/* Sidebar */}
+            <div className="col-md-3 col-lg-2 bg-light p-3 border-end">
+              <ul className="nav flex-column">
+                <li className="nav-item">
+                  <NavLink className="nav-link" to="/language">
+                    Language
+                  </NavLink>
+                </li>
+                <li className="nav-item">
+                  <NavLink className="nav-link" to="/country">
+                    Country
+                  </NavLink>
+                </li>
+                <li className="nav-item">
+                  <NavLink className="nav-link" to="/state">
+                    State
+                  </NavLink>
+                </li>
+                <li className="nav-item">
+                  <NavLink className="nav-link" to="/district">
+                    District
+                  </NavLink>
+                </li>
+                <li className="nav-item">
+                  <NavLink className="nav-link" to="/image">
+                    Image Upload
+                  </NavLink>
+                </li>
+                <li className="nav-item">
+                  <NavLink className="nav-link" to="/radio">
+                    Radio button
+                  </NavLink>
+                </li>
+                <li className="nav-item">
+                  <NavLink className="nav-link" to="/searching">
+                    Searching
+                  </NavLink>
+                </li>
+                <li className="nav-item">
+                  <NavLink className="nav-link" to="/pagination">
+                    Pagination
+                  </NavLink>
+                </li>
+                <li className="nav-item">
+                  <NavLink className="nav-link" to="/export">
+                    Export CSV
+                  </NavLink>
+                </li>
+                <li className="nav-item">
+                  <NavLink className="nav-link" to="/checkbox">
+                    Checkbox
+                  </NavLink>
+                </li>
+                <li className="nav-item">
+                  <NavLink className="nav-link" to="/multiselect">
+                    Multi Select Dropdown
+                  </NavLink>
+                </li>
+              </ul>
+            </div>
+            {/* Content Area */}
+            <div className="col-md-9 col-lg-10 p-4">
+              <Routes>
+                <Route path="/Language" element={<Language />} />
+                <Route path="/Country" element={<Country />} />
+                <Route path="/State" element={<State />} />
+                <Route path="/District" element={<District />} />
+                <Route path="/Image" element={<Image />} />
+                <Route path="/Radio" element={<Radio />} />
+                <Route path="/Searching" element={<Searching />} />
+                <Route path="/Pagination" element={<Pagination />} />
+                <Route path="/Export" element={<Export />} />
+                <Route path="/Checkbox" element={<Checkbox />} />
+                <Route path="/Multiselect" element={<Multiselect />} />
+              </Routes>
+            </div>
+
+          </div>
+        </div>
+
+        {/* Footer */}
+        <footer className="bg-dark text-light py-3 mt-auto">
+          <div className="container text-center">
+            Â© {new Date().getFullYear()} Siwansh Solutions. All rights reserved.
+          </div>
+        </footer>
+
+      </div>
+    </Router>
   );
 }
 
