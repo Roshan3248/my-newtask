@@ -22,6 +22,15 @@ function App() {
             <NavLink className="navbar-brand fw-bold" to="/">
               Siwansh Solutions
             </NavLink>
+            <NavLink className="navbar-brand fw-bold" to="/">
+              Home
+            </NavLink>
+            <NavLink className="navbar-brand fw-bold" to="/">
+              Login
+            </NavLink>
+            <NavLink className="navbar-brand fw-bold" to="/">
+              Logout
+            </NavLink>
           </div>
         </nav>
 
